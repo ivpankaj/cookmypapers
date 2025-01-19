@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Github, Mail, MessageCircle, X } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -25,26 +25,36 @@ export default function Footer() {
           {/* Contact Us Section */}
           <div>
             <h3 className="text-2xl font-semibold mb-4">📬 Contact Us</h3>
-            <p>Email: <span className="text-yellow-200">info@cookmypapers.com</span></p>
-            <p>Phone: <span className="text-yellow-200">(123) 456-7890</span></p>
+            <p>
+              <a href="mailto:cookmypapers@outlook.com" className="flex items-center space-x-2 hover:text-yellow-200">
+                <Mail className="w-5 h-5 text-red-600" />
+                <span>cookmypapers@outlook.com</span>
+              </a>
+            </p>
+            <p>
+              <a href="https://wa.me/919911064724" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-yellow-200">
+                <MessageCircle className="w-5 h-5 text-green-600" />
+                <span>+91 9911064724</span>
+              </a>
+            </p>
             <div className="mt-4">
               <h3 className="text-xl font-semibold mb-2">🌍 Follow Us</h3>
               <div className="flex space-x-4">
                 {/* Social Media Icons */}
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-facebook hover:text-facebook-700">
-                  <Facebook className="w-6 h-6 text-blue-600 hover:text-blue-700" />
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
+                  <Facebook className="w-6 h-6 text-blue-600" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-twitter hover:text-twitter-700">
-                  <Twitter className="w-6 h-6 text-blue-400 hover:text-blue-500" />
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+                  <X className="w-6 h-6 text-gray-400" />
                 </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-instagram hover:text-instagram-700">
-                  <Instagram className="w-6 h-6 text-pink-500 hover:text-pink-600" />
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">
+                  <Instagram className="w-6 h-6 text-pink-500" />
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-linkedin hover:text-linkedin-700">
-                  <Linkedin className="w-6 h-6 text-blue-700 hover:text-blue-800" />
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-800">
+                  <Linkedin className="w-6 h-6 text-blue-700" />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-gray-800">
-                  <Github className="w-6 h-6 text-gray-700 hover:text-gray-800" />
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800">
+                  <Github className="w-6 h-6 text-gray-700" />
                 </a>
               </div>
             </div>
@@ -53,7 +63,7 @@ export default function Footer() {
         
         {/* Bottom Section */}
         <div className="mt-8 text-center">
-          <p className="text-yellow-200">&copy; 2023 cookmypapers. All rights reserved. ✨</p>
+          <p className="text-yellow-200">&copy; 2025 cookmypapers. All rights reserved. ✨</p>
         </div>
       </div>
     </footer>
