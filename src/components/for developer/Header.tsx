@@ -58,7 +58,7 @@ export default function Header() {
             <li><Link href="#services" className="text-gray-800 hover:text-purple-600">Services 📋</Link></li>
             <li><Link href="#pricing" className="text-gray-800 hover:text-purple-600">Pricing 💰</Link></li>
             <li><Link href="#faq" className="text-gray-800 hover:text-purple-600">FAQ ❓</Link></li>
-            <li><Link href="#contact" className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Contact Us ✉️</Link></li>
+            <li><Link href="#contact" className="bg-purple-600 text-white px-4 py-2 rounded-3xl hover:bg-purple-700">Contact Us ✉️</Link></li>
           </ul>
         </motion.div>
       </motion.div>
