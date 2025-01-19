@@ -18,7 +18,7 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-xl mb-12"
         >
-   <h1>Let&apos;s whip up a website that&apos;ll make your competitors&apos; jaws drop!</h1>
+   Let&apos;s whip up a website that&apos;ll make your competitors&apos; jaws drop!
 
         </motion.p>
         <motion.button
