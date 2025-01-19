@@ -1,4 +1,3 @@
-
 "use client"
 import Link from 'next/link'
 import { useEffect } from 'react';
@@ -13,21 +12,21 @@ export default function Hero() {
 
   return (
     <section className="bg-yellow-400 text-black py-20 relative overflow-hidden">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4">
         {/* Title with Animation */}
-        <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-1s text-white">
-          Starting from <span className="text-green-800">₹ 59 💰</span>
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-1s text-white">
+          Starting from <span className="text-green-800">₹ 59 💻</span>
         </h1>
-        <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-2s">
-          Get Your Papers Cooked to Perfection 🍽️
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-2s">
+          Get Your Papers Cooked to Perfection 🎓📚
         </h1>
-        <p className="text-xl mb-8 animate__animated animate__fadeIn animate__delay-3s move-text">
-          Quality projects and assignments at student-friendly prices 🎓✍️
+        <p className="text-lg md:text-xl mb-8 animate__animated animate__fadeIn animate__delay-3s move-text">
+          Quality projects and assignments at student-friendly prices 💡📝
         </p>
         
         {/* Call to Action Button */}
-        <Link href="#pricing" className="bg-black text-yellow-400 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 animate__animated animate__zoomIn">
-          Get Started 🚀
+        <Link href="#pricing" className="bg-black text-yellow-400 px-6 py-3 md:px-8 md:py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 animate__animated animate__zoomIn">
+          Get Started 🚀💻
         </Link>
       </div>
 
