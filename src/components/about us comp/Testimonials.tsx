@@ -1,62 +1,91 @@
-"use client";
-import { motion } from "framer-motion";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+"use client"
 
-interface Testimonial {
-  name: string;
-  role: string;
-  quote: string;
-}
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { Card, CardContent } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-const testimonials: Testimonial[] = [
-  { name: "Alex S.", role: "Computer Science Student", quote: "cookmypapers saved my semester! Their quick turnaround and quality work helped me manage my course load effectively." },
-  { name: "Jessica L.", role: "Marketing Professional", quote: "As a working professional, time is precious. cookmypapers delivered excellent work that helped me advance my career while continuing my education." },
-  { name: "Ryan T.", role: "Engineering Graduate", quote: "The team at cookmypapers is simply amazing. Their expertise in technical subjects is unmatched. Highly recommended!" },
-  { name: "Sophia K.", role: "MBA Candidate", quote: "I was skeptical at first, but cookmypapers exceeded my expectations. Their work is thorough, well-researched, and always on time." },
-];
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    role: "CEO, TechCorp",
+    content:
+      "Working with this team has been transformative for our business. Their innovative solutions have propelled us to new heights.",
+    avatar: "/placeholder.svg?height=100&width=100",
+  },
+  {
+    name: "Michael Chen",
+    role: "CTO, InnovateTech",
+    content:
+      "The level of expertise and dedication this company brings to the table is unparalleled. They're not just service providers; they're true partners in our success.",
+    avatar: "/placeholder.svg?height=100&width=100",
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Director of Operations, GlobalSolutions",
+    content:
+      "From day one, they understood our vision and worked tirelessly to bring it to life. Their impact on our efficiency and growth has been nothing short of remarkable.",
+    avatar: "/placeholder.svg?height=100&width=100",
+  },
+]
 
 export default function Testimonials() {
+  return (
+    <div className="py-20 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} index={index} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
+interface Testimonial {
+  avatar: string
+  name: string
+  role: string
+  content: string
+}
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+interface TestimonialCardProps {
+  testimonial: Testimonial
+  index: number
+}
 
-  };
+function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <div className="container mx-auto">
-        <motion.h2 
-          className="text-3xl font-bold text-center mb-12"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          What Our Clients Say 💬
-        </motion.h2>
-        <Slider {...settings}>
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.name} className="px-4">
-              <motion.div 
-                className="bg-white text-black p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <p className="text-lg mb-4">&apos;{testimonial.quote}&apos;</p>
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-gray-600">{testimonial.role}</p>
-              </motion.div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Card>
+        <CardContent className="p-6">
+          <div className="flex items-center mb-4">
+            <Avatar className="h-10 w-10 mr-4">
+              <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+              <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div>
+              <p className="font-semibold">{testimonial.name}</p>
+              <p className="text-sm text-gray-500">{testimonial.role}</p>
             </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
-  );
+          </div>
+          <p className="text-gray-700">{testimonial.content}</p>
+        </CardContent>
+      </Card>
+    </motion.div>
+  )
 }
+
+
