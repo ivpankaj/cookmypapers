@@ -8,9 +8,9 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-purple-100">
+    <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Happy Customers 😋</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-purple-400">Happy Customers 😋</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -18,7 +18,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-purple-400 p-6 rounded-lg shadow-md"
             >
               <p className="mb-4 italic">&quot;{testimonial.quote}&quot;</p>
               <p className="font-semibold">{testimonial.name}</p>

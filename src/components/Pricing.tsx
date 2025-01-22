@@ -11,9 +11,9 @@ type PricingCardProps = {
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 bg-yellow-400">
+    <section id="pricing" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-800 animate-bounce">Affordable Pricing</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-white animate-bounce">Affordable Pricing</h2>
         <div className="flex justify-center">
           <PricingCard
             title="Contact us for Pricing"
@@ -33,7 +33,7 @@ export default function Pricing() {
 function PricingCard({ title, price, features, highlighted = false }: PricingCardProps) {
   return (
     <div
-      className={`p-6 rounded-lg text-center shadow-lg transform hover:scale-105 transition-transform duration-300 
+      className={`p-6 rounded-3xl text-center shadow-lg transform hover:scale-105 transition-transform duration-300 
         ${highlighted ? 'bg-yellow-600 text-white' : 'bg-yellow-500 text-black'} 
         hover:shadow-2xl`}
     >

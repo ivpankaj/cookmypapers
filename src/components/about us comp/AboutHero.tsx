@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function AboutHero() {
   return (
-    <section className="bg-yellow-400 text-black py-20">
+    <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-yellow-400 py-20">
       <div className="container mx-auto text-center">
         <motion.h1 
           className="text-5xl font-bold mb-4"

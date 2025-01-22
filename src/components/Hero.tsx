@@ -11,7 +11,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-yellow-400 text-black py-20 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 relative overflow-hidden">
       <div className="container mx-auto text-center px-4">
         {/* Title with Animation */}
         <h1 className="text-3xl md:text-5xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-1s text-white">

@@ -13,7 +13,7 @@ import Testimonials from '@/components/for developer/Testimonials'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 to-blue-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
       <Header />
       <main>
         <Hero />

@@ -1,44 +1,51 @@
 "use client";
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import { GiThrustBend } from 'react-icons/gi';
-import { LiaLinkedinIn } from 'react-icons/lia';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { GiThrustBend } from "react-icons/gi";
+import { LiaLinkedinIn } from "react-icons/lia";
 
 export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const socialMedia = [
     {
-      name: 'Facebook',
+      name: "cookmypapers",
       icon: <Facebook className="h-8 w-8" />,
-      link: 'https://facebook.com',
-      color: 'bg-blue-600'
+      link: "https://facebook.com",
+      color: "bg-blue-600",
     },
     {
-      name: 'Twitter',
+      name: "",
       icon: <Twitter className="h-8 w-8" />,
-      link: 'https://twitter.com',
-      color: 'bg-sky-500'
+      link: "https://twitter.com",
+      color: "bg-sky-500",
     },
     {
-      name: 'Instagram',
+      name: "",
       icon: <Instagram className="h-8 w-8" />,
-      link: 'https://instagram.com',
-      color: 'bg-pink-600'
+      link: "https://instagram.com",
+      color: "bg-pink-600",
     },
     {
-      name: 'LinkedIn',
+      name: "",
       icon: <LiaLinkedinIn className="h-8 w-8" />,
-      link: 'https://linkedin.com',
-      color: 'bg-blue-800'
+      link: "https://linkedin.com",
+      color: "bg-blue-800",
     },
     {
-      name: 'GitHub',
+      name: "",
       icon: <GiThrustBend className="h-8 w-8" />,
-      link: 'https://github.com',
-      color: 'bg-gray-800'
-    }
+      link: "https://github.com",
+      color: "bg-gray-800",
+    },
   ];
 
   const nextSlide = () => {
@@ -46,11 +53,13 @@ export default function ContactPage() {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + socialMedia.length) % socialMedia.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + socialMedia.length) % socialMedia.length
+    );
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -58,8 +67,12 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
-        <p className="text-lg text-gray-600">We&lsquo;d love to hear from you!</p>
+        <h1 className="text-4xl font-bold text-yellow-400 mb-4">
+          Get in Touch
+        </h1>
+        <p className="text-lg text-gray-600">
+          We&lsquo;d love to hear from you!
+        </p>
       </motion.div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -71,7 +84,7 @@ export default function ContactPage() {
           className="space-y-6"
         >
           {/* Contact Info Card */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-yellow-400 rounded-3xl shadow-md p-6">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-6 w-6 text-blue-500" />
@@ -92,27 +105,29 @@ export default function ContactPage() {
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-md p-6 text-white"
+            className="bg-yellow-400 rounded-3xl shadow-md p-6 text-black"
           >
             <h2 className="text-2xl font-semibold mb-2">Support Our Cause</h2>
-            <p className="text-gray-100 mb-6">Your contribution helps us make a difference</p>
+            <p className=" mb-6">
+              Your contribution helps us make a difference
+            </p>
             <div className="space-y-4">
               <div className="grid grid-cols-3 gap-4">
                 {[10, 25, 50].map((amount) => (
                   <button
                     key={amount}
-                    className="w-full py-2 px-4 rounded-md border border-white text-white hover:bg-white hover:text-purple-500 transition-colors"
+                    className="w-full py-2 px-4 rounded-md transition-colors border border-black"
                   >
-                    ${amount}
+                    ₹{amount}
                   </button>
                 ))}
               </div>
               <input
                 type="number"
                 placeholder="Custom amount"
-                className="w-full px-4 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder-white/70"
+                className="w-full px-4 py-2 rounded-2xl text-black bg-yellow-400 border border-black"
               />
-              <button className="w-full py-2 px-4 rounded-md bg-white text-purple-500 hover:bg-white/90 transition-colors">
+              <button className="w-full py-2 px-4 rounded-3xl bg-gradient-to-br text-yellow-400 transition-colors">
                 Donate Now
               </button>
             </div>
@@ -127,49 +142,60 @@ export default function ContactPage() {
           className="space-y-6"
         >
           {/* Contact Form */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-yellow-400 rounded-3xl shadow-md p-6">
             <form className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-1"
+                >
                   Name
                 </label>
                 <input
                   id="name"
                   type="text"
                   placeholder="Your name"
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-yellow-400 border border-black"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Email
                 </label>
                 <input
                   id="email"
                   type="email"
                   placeholder="Your email"
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-yellow-400 border border-black"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Message
                 </label>
                 <textarea
                   id="message"
                   rows={4}
                   placeholder="Your message"
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-yellow-400 border border-black"
                 />
               </div>
-              <button className="w-full py-2 px-4 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors">
+              <button className="w-full py-2 px-4 bg-black text-yellow-400 rounded-md hover:bg-gray-600 transition-colors">
                 Send Message
               </button>
             </form>
           </div>
-
+          <h1 className="text-4xl font-bold text-yellow-400 mb-4">
+          Find us at everywhere
+        </h1>
           {/* Social Media Carousel */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-md p-6">
             <div className="relative">
               <div className="overflow-hidden">
                 <motion.div
@@ -183,9 +209,11 @@ export default function ContactPage() {
                       whileHover={{ scale: 1.05 }}
                       className="min-w-full"
                     >
-                      <div className={`${social.color} rounded-lg p-6 text-white text-center`}>
-                        {social.icon}
-                        <h3 className="mt-2 font-semibold">{social.name}</h3>
+                      <div
+                        className={`${social.color} rounded-lg p-6 text-black text-center`}
+                      >
+                       
+                        <h3 className="mt-2 font-semibold flex justify-center"> {social.icon} {social.name}</h3>
                       </div>
                     </motion.div>
                   ))}
@@ -193,13 +221,13 @@ export default function ContactPage() {
               </div>
               <button
                 onClick={prevSlide}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-xl p-2 bg-yellow-400"
               >
                 ←
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-xl p-2 bg-yellow-400"
               >
                 →
               </button>

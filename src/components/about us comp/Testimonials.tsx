@@ -30,7 +30,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 bg-yellow-200">
+    <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto">
         <motion.h2 
           className="text-3xl font-bold text-center mb-12"
@@ -44,7 +44,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="px-4">
               <motion.div 
-                className="bg-white p-6 rounded-lg shadow-lg"
+                className="bg-white text-black p-6 rounded-lg shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}

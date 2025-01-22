@@ -24,7 +24,7 @@ export default function OurTeam() {
           {teamMembers.map((member, index) => (
             <motion.div 
               key={member.name}
-              className="bg-yellow-100 p-6 rounded-lg text-center"
+              className="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-6 rounded-lg text-center"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}

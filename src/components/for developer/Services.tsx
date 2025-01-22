@@ -9,9 +9,9 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Secret Sauce 🥘</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-purple-400">Our Secret Sauce 🥘</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
@@ -19,7 +19,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-purple-100 p-6 rounded-lg text-center"
+              className="bg-purple-300 p-6 rounded-3xl text-center"
             >
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>

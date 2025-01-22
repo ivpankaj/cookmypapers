@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="py-20 text-center">
+    <section className="py-20 text-center text-purple-400">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export default function Hero() {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="bg-purple-600 text-white px-8 py-4 rounded-full text-xl font-semibold hover:bg-purple-700 transition duration-300"
+        className="bg-purple-600 text-white px-8 py-4 rounded-3xl text-xl font-semibold hover:bg-purple-700 transition duration-300"
       >
         Get a Free Quote 🚀
       </motion.button>

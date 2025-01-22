@@ -36,7 +36,7 @@ export default function Features() {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-yellow-800 p-6 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl hover:bg-yellow-700">
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl hover:bg-yellow-700">
       <div className="flex justify-center mb-4">{icon}</div>
       <h3 className="text-xl font-semibold text-yellow-50 mb-2 transform transition-transform duration-300 hover:text-yellow-300">{title}</h3>
       <p className="text-yellow-200">{description}</p>

@@ -14,7 +14,7 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100 }}
-      className="bg-white shadow-md py-4"
+      className="bg-gradient-to-br from-gray-900 to-gray-800 shadow-md py-4"
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-purple-600 flex items-center">
@@ -49,16 +49,16 @@ export default function Header() {
         onClick={toggleSidebar} // Close sidebar when clicking outside
       >
         <motion.div
-          className="fixed top-0 left-0 w-2/3 bg-white shadow-md py-4 px-6 z-10 rounded-xl"
+          className="fixed top-0 left-0 w-2/3 bg-gradient-to-br from-gray-900 to-gray-800 shadow-md py-4 px-6 z-10 rounded-3xl"
           initial={{ x: '-100%' }}
           animate={{ x: isOpen ? 0 : '-100%' }}
           transition={{ type: 'spring', stiffness: 300 }}
         >
           <ul className="space-y-6 mt-10">
-            <li><Link href="#services" className="text-gray-800 hover:text-purple-600">Services 📋</Link></li>
-            <li><Link href="#pricing" className="text-gray-800 hover:text-purple-600">Pricing 💰</Link></li>
-            <li><Link href="#faq" className="text-gray-800 hover:text-purple-600">FAQ ❓</Link></li>
-            <li><Link href="#contact" className="bg-purple-600 text-white px-4 py-2 rounded-3xl hover:bg-purple-700">Contact Us ✉️</Link></li>
+            <li><Link href="#services" className="text-purple-800 hover:text-purple-600">Services 📋</Link></li>
+            <li><Link href="#pricing" className="text-purple-800 hover:text-purple-600">Pricing 💰</Link></li>
+            <li><Link href="#faq" className="text-purple-800 hover:text-purple-600">FAQ ❓</Link></li>
+            <li><Link href="/developer/samples" className="bg-purple-600 text-white px-4 py-2 rounded-3xl hover:bg-purple-700">Coding Portfolio ✉️</Link></li>
           </ul>
         </motion.div>
       </motion.div>

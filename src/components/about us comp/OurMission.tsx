@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function OurMission() {
   return (
-    <section className="py-20 bg-yellow-100">
+    <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto">
         <motion.h2 
           className="text-3xl font-bold text-center mb-8"
