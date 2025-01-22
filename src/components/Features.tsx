@@ -1,3 +1,4 @@
+"use client"
 import { Lightbulb, Clock, DollarSign } from 'lucide-react'
 
 interface FeatureCardProps {
