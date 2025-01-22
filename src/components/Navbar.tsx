@@ -27,10 +27,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className="hidden lg:flex flex-wrap space-x-6 mt-2">
           <li className="group relative">
-            <Link href="/" className="text-lg uppercase hover:text-yellow-400 transition-all duration-300">
-              🏠 Home
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400 scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
-            </Link>
+      
           </li>
      
           <li className="group relative">
@@ -46,10 +43,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="group relative">
-            <Link href="/samples" className="text-lg uppercase hover:text-yellow-400 transition-all duration-300">
-              🗃️ Samples
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400 scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
-            </Link>
+   
           </li>
         </ul>
 
@@ -76,9 +70,7 @@ const Navbar = () => {
           >
             <FaTimes />
           </button>
-          <Link href="/" className="text-lg uppercase hover:text-yellow-400 transition-all duration-300">
-            🏠 Home
-          </Link>
+    
           <Link href="/signin" className="text-lg uppercase hover:text-yellow-400 transition-all duration-300">
             🔐 Sign In
           </Link>

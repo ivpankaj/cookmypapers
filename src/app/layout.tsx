@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* Google Analytics Component */}
+        <GoogleAnalytics trackPageViews gaMeasurementId="G-L2VG2QYGPG" />
+        {children}
+      </body>
     </html>
   )
 }
-
