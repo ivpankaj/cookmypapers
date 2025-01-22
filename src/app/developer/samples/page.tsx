@@ -1,4 +1,3 @@
-// src/app/work/page.js
 "use client";
 import React, { useState, useEffect, ReactNode, MouseEventHandler } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
