@@ -1,6 +1,5 @@
-"use client"
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+"use client";
+import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,10 +15,10 @@ const testimonials: Testimonial[] = [
   { name: "Jessica L.", role: "Marketing Professional", quote: "As a working professional, time is precious. cookmypapers delivered excellent work that helped me advance my career while continuing my education." },
   { name: "Ryan T.", role: "Engineering Graduate", quote: "The team at cookmypapers is simply amazing. Their expertise in technical subjects is unmatched. Highly recommended!" },
   { name: "Sophia K.", role: "MBA Candidate", quote: "I was skeptical at first, but cookmypapers exceeded my expectations. Their work is thorough, well-researched, and always on time." },
-]
+];
 
 export default function Testimonials() {
-  const [ setCurrentSlide] = useState<number>(0)
+
 
   const settings = {
     dots: true,
@@ -27,8 +26,8 @@ export default function Testimonials() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: (index: number) => setCurrentSlide(index),
-  }
+
+  };
 
   return (
     <section className="py-20 bg-yellow-200">
@@ -59,5 +58,5 @@ export default function Testimonials() {
         </Slider>
       </div>
     </section>
-  )
+  );
 }
