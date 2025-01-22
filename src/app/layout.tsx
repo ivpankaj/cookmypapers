@@ -1,4 +1,3 @@
-
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -16,11 +15,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* Client-side components */}
-
-        {children}
-      </body>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2VG2QYGPG"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          `}
+        </script>
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
