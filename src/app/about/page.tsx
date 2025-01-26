@@ -9,18 +9,13 @@ import Testimonials from "@/components/about us comp/Testimonials";
 import Timeline from "@/components/about us comp/Timeline";
 import Values from "@/components/about us comp/Values";
 import { AnimatedTestimonialsDemo } from "@/components/AnimatedScroll";
-import { GlobeDemo } from "@/components/Globe";
 import { MarqueeDemo } from "@/components/Infinite";
-import ScratchToRevealDemo from "@/components/Scratch";
 import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-purple-600">
-      <div className="flex justify-center">
-        {" "}
-        <ScratchToRevealDemo />
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-purple-600 overflow-hidden">
+<AnimatedTestimonialsDemo/>
       <Hero />
       <motion.div
         initial={{ opacity: 0 }}
@@ -32,14 +27,10 @@ export default function About() {
         <Timeline />
         <Stats />
         <Values />
-        <AnimatedTestimonialsDemo/>
+
         <Testimonials />
         <Awards />
         <Team />
-        <div className="flex justify-center">
-          {" "}
-          <GlobeDemo />
-        </div>
       </motion.div>
     </div>
   );
