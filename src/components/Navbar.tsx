@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BiCodeAlt } from 'react-icons/bi';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
+import { HyperTextDemo } from './HoverText';
 
 const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Brand Name */}
         <div className="text-yellow-400 text-2xl font-bold uppercase tracking-wide cursor-pointer flex items-center">
-           CookMyPapers
+          <HyperTextDemo/>
         </div>
 
         {/* Hamburger Icon */}

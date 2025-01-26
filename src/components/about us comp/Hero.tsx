@@ -28,7 +28,7 @@ export default function Hero() {
         transition={{ duration: 1 }}
       >
         <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-          Innovating the Future
+          cooking with perfections
         </h1>
         <motion.p
           className="text-xl mb-8"
@@ -40,7 +40,7 @@ export default function Hero() {
           unparalleled expertise.
         </motion.p>
         <Button size="lg" variant="outline">
-          Discover Our Story
+          <span className="text-black">Discover Our Story</span>
         </Button>
       </motion.div>
     </div>
