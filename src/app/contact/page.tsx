@@ -11,6 +11,9 @@ import {
 } from "lucide-react";
 import { GiThrustBend } from "react-icons/gi";
 import { LiaLinkedinIn } from "react-icons/lia";
+import { TextRevealDemo } from "@/components/TextReveal";
+import { WorldMapDemo } from "@/components/Globe";
+
 
 export default function ContactPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,7 +63,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
-      {/* Hero Section */}
+   <TextRevealDemo/>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -234,6 +237,7 @@ export default function ContactPage() {
             </div>
           </div>
         </motion.div>
+        <WorldMapDemo/>
       </div>
     </div>
   );

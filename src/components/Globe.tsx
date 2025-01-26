@@ -1,13 +1,67 @@
-import { Globe } from "./ui/globe";
+"use client";
+import WorldMap from "@/components/ui/world-map";
+import { motion } from "motion/react";
 
-export function GlobeDemo() {
+export function WorldMapDemo() {
   return (
-    <div className="relative flex items-center justify-center max-w-full w-full h-full px-6 py-12 sm:px-8 sm:py-16 md:px-10 md:py-24 lg:px-16 lg:py-32 xl:px-24 xl:py-40 overflow-hidden rounded-lg border bg-gray-600">
-      <span className="absolute pointer-events-none text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-        cookmypapers available everywhere
-      </span>
-      <Globe className="top-28 absolute" />
-      <div className="absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
+    <div className=" py-40 dark:bg-black bg-white w-full">
+      <div className="max-w-7xl mx-auto text-center">
+        <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
+          Remote{" "}
+          <span className="text-neutral-400">
+            {"Connectivity".split("").map((word, idx) => (
+              <motion.span
+                key={idx}
+                className="inline-block"
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: idx * 0.04 }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </span>
+        </p>
+        <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
+          Break free from traditional boundaries. Work from anywhere, at the
+          comfort of your own studio apartment. Perfect for Nomads and
+          Travellers.
+        </p>
+      </div>
+      <WorldMap
+        dots={[
+          {
+            start: {
+              lat: 64.2008,
+              lng: -149.4937,
+            }, // Alaska (Fairbanks)
+            end: {
+              lat: 34.0522,
+              lng: -118.2437,
+            }, // Los Angeles
+          },
+          {
+            start: { lat: 64.2008, lng: -149.4937 }, // Alaska (Fairbanks)
+            end: { lat: -15.7975, lng: -47.8919 }, // Brazil (Brasília)
+          },
+          {
+            start: { lat: -15.7975, lng: -47.8919 }, // Brazil (Brasília)
+            end: { lat: 38.7223, lng: -9.1393 }, // Lisbon
+          },
+          {
+            start: { lat: 51.5074, lng: -0.1278 }, // London
+            end: { lat: 28.6139, lng: 77.209 }, // New Delhi
+          },
+          {
+            start: { lat: 28.6139, lng: 77.209 }, // New Delhi
+            end: { lat: 43.1332, lng: 131.9113 }, // Vladivostok
+          },
+          {
+            start: { lat: 28.6139, lng: 77.209 }, // New Delhi
+            end: { lat: -1.2921, lng: 36.8219 }, // Nairobi
+          },
+        ]}
+      />
     </div>
   );
 }
