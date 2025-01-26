@@ -4,59 +4,64 @@ import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { cn } from "@/lib/utils";
 
-export const TextRevealCard = ({
-  text,
-  revealText,
-  children,
-  className,
-}: {
+
+
+interface TextRevealCardProps {
   text: string;
   revealText: string;
   children?: React.ReactNode;
   className?: string;
+}
+
+export const TextRevealCard: React.FC<TextRevealCardProps> = ({
+  text,
+  revealText,
+  children,
+  className,
 }) => {
   const [widthPercentage, setWidthPercentage] = useState(0);
-  const cardRef = useRef<HTMLDivElement | any>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
   const [left, setLeft] = useState(0);
   const [localWidth, setLocalWidth] = useState(0);
   const [isMouseOver, setIsMouseOver] = useState(false);
 
   useEffect(() => {
     if (cardRef.current) {
-      const { left, width: localWidth } =
-        cardRef.current.getBoundingClientRect();
+      const { left, width: localWidth } = cardRef.current.getBoundingClientRect();
       setLeft(left);
       setLocalWidth(localWidth);
     }
   }, []);
 
-  function mouseMoveHandler(event: any) {
+  const mouseMoveHandler = (event: React.MouseEvent<HTMLDivElement>): void => {
     event.preventDefault();
-
     const { clientX } = event;
     if (cardRef.current) {
       const relativeX = clientX - left;
       setWidthPercentage((relativeX / localWidth) * 100);
     }
-  }
+  };
 
-  function mouseLeaveHandler() {
+  const mouseLeaveHandler = (): void => {
     setIsMouseOver(false);
     setWidthPercentage(0);
-  }
-  function mouseEnterHandler() {
+  };
+
+  const mouseEnterHandler = (): void => {
     setIsMouseOver(true);
-  }
-  function touchMoveHandler(event: React.TouchEvent<HTMLDivElement>) {
+  };
+
+  const touchMoveHandler = (event: React.TouchEvent<HTMLDivElement>): void => {
     event.preventDefault();
-    const clientX = event.touches[0]!.clientX;
+    const clientX = event.touches[0]?.clientX || 0;
     if (cardRef.current) {
       const relativeX = clientX - left;
       setWidthPercentage((relativeX / localWidth) * 100);
     }
-  }
+  };
 
   const rotateDeg = (widthPercentage - 50) * 0.1;
+
   return (
     <div
       onMouseEnter={mouseEnterHandler}
@@ -73,7 +78,7 @@ export const TextRevealCard = ({
     >
       {children}
 
-      <div className="h-40  relative flex items-center overflow-hidden">
+      <div className="h-40 relative flex items-center overflow-hidden">
         <motion.div
           style={{
             width: "100%",
@@ -89,7 +94,7 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-[#1d1c20] z-20  will-change-transform"
+          className="absolute bg-[#1d1c20] z-20 will-change-transform"
         >
           <p
             style={{
@@ -110,16 +115,18 @@ export const TextRevealCard = ({
           className="h-40 w-[8px] bg-gradient-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
           <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#323238]">
             {text}
           </p>
+          {/* Assuming MemoizedStars is a valid component */}
           <MemoizedStars />
         </div>
       </div>
     </div>
   );
 };
+
 
 export const TextRevealCardTitle = ({
   children,
