@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-purple-600">
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center">
         {" "}
         <ScratchToRevealDemo />
       </div>
